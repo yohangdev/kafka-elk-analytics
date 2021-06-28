@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'e8aa6e4b5a1db2f56ae794f1505391a8' => $vendorDir . '/amphp/amp/lib/functions.php',
+    '6e3fae29631ef280660b3cdad06f25a8' => $vendorDir . '/symfony/deprecation-contracts/function.php',
 );

@@ -1,5 +1,6 @@
 {
     "require": {
-        "nmred/kafka-php": "v0.2.0.8"
+        "nmred/kafka-php": "v0.2.0.8",
+        "fakerphp/faker": "^1.14"
     }
 }
