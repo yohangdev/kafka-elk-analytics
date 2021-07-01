@@ -27,6 +27,8 @@ for ($n = 0; $n < 100; $n++) {
     $users[] = [
         'id' => $faker->uuid(),
         'name' => $faker->name(),
+        'latitude' => $faker->latitude(-7.225436473271717, -6.62696411642353),
+        'longitude' => $faker->longitude(106.83070063591005, 108.4484374523163),
     ];
 }
 
@@ -36,6 +38,10 @@ while (true) {
     $payload = [
         'user_id' => $user['id'],
         'user_name' => $user['name'],
+        'user_location' => [
+            'lat' => $user['latitude'],
+            'lon' => $user['longitude'],
+        ],
         'event_name' => $faker->randomElement($eventNames),
     ];
 
@@ -48,5 +54,7 @@ while (true) {
         ],
     ]);
 
-    sleep(0.2);
+
+    $time = mt_rand() / mt_getrandmax();
+    usleep($time * 1000000);
 }
