@@ -23,6 +23,15 @@ $eventNames = [
     'videos_list', 'videos_detail', 'videos_share', 'videos_liked', 'videos_disliked',
 ];
 
+$eventAttributes = [];
+
+for ($n = 0; $n < 20; $n++) {
+    $eventAttributes[] = [
+        ['video_id' => $faker->uuid(), 'video_title' => $faker->sentence()],
+        ['news_id' => $faker->uuid(), 'news_title' => $faker->sentence()],
+    ];
+}
+
 for ($n = 0; $n < 100; $n++) {
     $users[] = [
         'id' => $faker->uuid(),
@@ -43,6 +52,7 @@ while (true) {
             'lon' => $user['longitude'],
         ],
         'event_name' => $faker->randomElement($eventNames),
+        'attributes' => $faker->randomElement($eventAttributes),
     ];
 
     $producer->send([
